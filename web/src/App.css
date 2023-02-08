@@ -1,0 +1,73 @@
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: normal;
+  background: #2b3035;
+  color: gray;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  line-height: 1.5;
+  font-weight: 400;
+  font-family: "Poppins", Arial, sans-serif;
+  color: #000;
+}
+
+.icon-color {
+  color: #fff;
+}
+
+.bg-primary {
+  background: #1089ff !important;
+}
+
+.heading-section {
+  font-size: 28px;
+  color: #fff;
+}
+
+.img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.table-wrap {
+  overflow-x: hidden;
+}
+
+.table {
+  min-width: 1000px !important;
+  width: 100%;
+}
+.table thead th {
+  border: none;
+  padding: 20px 30px;
+  font-size: 14px;
+  color: #fff;
+  border-bottom: 4px solid #2b3035;
+}
+.table tbody tr {
+  margin-bottom: 10px;
+}
+.table tbody th,
+.table tbody td {
+  border: none;
+  padding: 20px 30px;
+  border-bottom: 3px solid #2b3035;
+  font-size: 14px;
+}
+
+.app-container {
+  padding: 3rem 0;
+}
