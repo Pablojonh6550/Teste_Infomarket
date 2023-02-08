@@ -63,4 +63,12 @@ async function updatePeople(id, request) {
   console.log("foi");
 }
 
+async function deletePeople(id) {
+  const conn = global.connection;
+
+  const sql = "DELETE FROM pessoa WHERE id=?";
+  const values = [request.id];
+
+  await conn.query(sql, values);
+}
 module.exports = { selectAllPeople, insertPeople, updatePeople, deletePeople };
