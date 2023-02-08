@@ -32,4 +32,35 @@ async function insertPeople(request) {
   await conn.query(sql, values);
 }
 
-module.exports = { selectAllPeople, insertAddress, insertPeople };
+async function updateAdress(id, request) {
+  const conn = global.connection;
+
+  const sqlSelect = "SELECT endereco_id FROM pessoa WHERE id=?";
+  const sqlValue = [id];
+
+  const adressId = conn.query(sqlSelect, sqlValue);
+
+  const sql = "UPDATE endereco SET rua=?, numero=?, bairro=?, cep=? WHERE id=?";
+  const values = [
+    request.rua,
+    request.numero,
+    request.bairro,
+    request.cep,
+    adressId,
+  ];
+
+  await conn.query(sql, values);
+}
+
+async function updatePeople(id, request) {
+  await updateAdress(request.id, request.adress);
+  const conn = global.connection;
+
+  const sql = "UPDATE pessoa SET nome=?, idade=? WHERE id=?";
+  const values = [request.nome, request.idade, id];
+
+  await conn.query(sql, values);
+  console.log("foi");
+}
+
+module.exports = { selectAllPeople, insertPeople, updatePeople, deletePeople };
