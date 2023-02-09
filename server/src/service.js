@@ -14,7 +14,7 @@ async function selectAllPeople() {
     FROM pessoa AS P 
     INNER JOIN endereco AS E ON P.id = E.pessoa_id;`
   );
-  return await rows;
+  return rows;
 }
 
 // insere o endereço da pessoa no banco
